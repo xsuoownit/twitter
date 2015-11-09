@@ -25,12 +25,16 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogout) name:UserDidLogoutNotification object:nil];
     
+    UINavigationController *nvc;
     User *user = [User currentUser];
     if (user != nil) {
-        self.window.rootViewController = [[TweetsViewController alloc] init];
+        UIViewController *vc = [[TweetsViewController alloc] init];
+        nvc = [[UINavigationController alloc] initWithRootViewController:vc];
     } else {
-        self.window.rootViewController = [[LoginViewController alloc] init];
+        UIViewController *vc = [[LoginViewController alloc] init];
+        nvc = [[UINavigationController alloc] initWithRootViewController:vc];
     }
+    self.window.rootViewController = nvc;
     
     [self.window makeKeyAndVisible];
     

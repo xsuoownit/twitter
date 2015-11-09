@@ -20,6 +20,18 @@
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"EEE MMM d HH:mm:ss Z y";
         self.createdAt = [formatter dateFromString:createdAtString];
+        
+        NSDate *now = [NSDate date];
+        NSTimeInterval secondsBetween = [now timeIntervalSinceDate:self.createdAt];
+        if (secondsBetween < 60) {
+            self.timeDiff = [NSString stringWithFormat:@"%lds", (long)secondsBetween];
+        } else if (secondsBetween < 3600) {
+            self.timeDiff = [NSString stringWithFormat:@"%ldm", (long)secondsBetween / 60];
+        } else if (secondsBetween < 86400) {
+            self.timeDiff = [NSString stringWithFormat:@"%ldh", (long)secondsBetween / 3600];
+        } else {
+            self.timeDiff = [NSString stringWithFormat:@"%ldd", (long)secondsBetween / 86400];
+        }
     }
     return self;
 }

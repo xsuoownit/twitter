@@ -9,8 +9,14 @@
 #import "TweetsViewController.h"
 #import "TwitterClient.h"
 #import "Tweet.h"
+#import "User.h"
+#import "NewTweetViewController.h"
+#import "TweetCell.h"
 
-@interface TweetsViewController ()
+@interface TweetsViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *tweets;
 
 @end
 
@@ -18,11 +24,54 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.estimatedRowHeight = 140;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    [self.tableView registerNib:[UINib nibWithNibName:@"TweetCell" bundle:nil] forCellReuseIdentifier:@"TweetCell"];
+    
+    self.title = @"Home";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
+    UIColor *bgColor = [UIColor colorWithRed:80/255.0 green:170/255.0 blue:241/255.0 alpha:1.0];
+    [self.navigationController.navigationBar setBarTintColor:bgColor];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    UIBarButtonItem *signoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(onSignout)];
+    self.navigationItem.leftBarButtonItem = signoutButton;
+    
+    UIBarButtonItem *newButton = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStylePlain target:self action:@selector(onNew)];
+    self.navigationItem.rightBarButtonItem = newButton;
+    
     [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
-        for (Tweet *tweet in tweets) {
-            NSLog(@"text: %@", tweet.text);
-        }
+        self.tweets = tweets;
+        [self.tableView reloadData];
     }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.tweets.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    TweetCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
+    [cell setTweet:self.tweets[indexPath.row]];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)onNew {
+    NewTweetViewController *ntvc = [[NewTweetViewController alloc] init];
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:ntvc];
+    [self presentViewController:nc animated:YES completion:nil];
+}
+
+- (void)onSignout {
+    [User logout];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -18,6 +18,14 @@
 		025B13B11BED6292002AB684 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 025B13B01BED6292002AB684 /* User.m */; };
 		025B13B51BF003F3002AB684 /* TweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025B13B31BF003F3002AB684 /* TweetsViewController.m */; };
 		025B13B61BF003F3002AB684 /* TweetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 025B13B41BF003F3002AB684 /* TweetsViewController.xib */; };
+		025B13BB1BF0401C002AB684 /* TweetDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025B13B91BF0401C002AB684 /* TweetDetailsViewController.m */; };
+		025B13BC1BF0401C002AB684 /* TweetDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 025B13BA1BF0401C002AB684 /* TweetDetailsViewController.xib */; };
+		025B13C01BF0402D002AB684 /* NewTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025B13BE1BF0402D002AB684 /* NewTweetViewController.m */; };
+		025B13C11BF0402D002AB684 /* NewTweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 025B13BF1BF0402D002AB684 /* NewTweetViewController.xib */; };
+		025B13C51BF040FD002AB684 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025B13C31BF040FD002AB684 /* TweetCell.m */; };
+		025B13C61BF040FD002AB684 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 025B13C41BF040FD002AB684 /* TweetCell.xib */; };
+		025B13C91BF047F9002AB684 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 025B13C71BF047F9002AB684 /* reply.png */; };
+		025B13CA1BF047F9002AB684 /* reweet.png in Resources */ = {isa = PBXBuildFile; fileRef = 025B13C81BF047F9002AB684 /* reweet.png */; };
 		0D674BD10BAEC3EA2893A8D2 /* libPods-twitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 334860265EF58386534DA83A /* libPods-twitter.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +49,17 @@
 		025B13B21BF003F3002AB684 /* TweetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetsViewController.h; sourceTree = "<group>"; };
 		025B13B31BF003F3002AB684 /* TweetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetsViewController.m; sourceTree = "<group>"; };
 		025B13B41BF003F3002AB684 /* TweetsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetsViewController.xib; sourceTree = "<group>"; };
+		025B13B81BF0401C002AB684 /* TweetDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDetailsViewController.h; sourceTree = "<group>"; };
+		025B13B91BF0401C002AB684 /* TweetDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDetailsViewController.m; sourceTree = "<group>"; };
+		025B13BA1BF0401C002AB684 /* TweetDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetDetailsViewController.xib; sourceTree = "<group>"; };
+		025B13BD1BF0402D002AB684 /* NewTweetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTweetViewController.h; sourceTree = "<group>"; };
+		025B13BE1BF0402D002AB684 /* NewTweetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTweetViewController.m; sourceTree = "<group>"; };
+		025B13BF1BF0402D002AB684 /* NewTweetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTweetViewController.xib; sourceTree = "<group>"; };
+		025B13C21BF040FD002AB684 /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
+		025B13C31BF040FD002AB684 /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
+		025B13C41BF040FD002AB684 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
+		025B13C71BF047F9002AB684 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
+		025B13C81BF047F9002AB684 /* reweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reweet.png; sourceTree = "<group>"; };
 		334860265EF58386534DA83A /* libPods-twitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-twitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E98A586213242454C4F2179 /* Pods-twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.debug.xcconfig"; sourceTree = "<group>"; };
 		57D0261EAB7B70B2BC78AC0A /* Pods-twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +105,8 @@
 				025B131B1BEBC5DB002AB684 /* AppDelegate.h */,
 				025B131C1BEBC5DB002AB684 /* AppDelegate.m */,
 				025B13241BEBC5DB002AB684 /* Assets.xcassets */,
+				025B13C71BF047F9002AB684 /* reply.png */,
+				025B13C81BF047F9002AB684 /* reweet.png */,
 				025B13261BEBC5DB002AB684 /* LaunchScreen.storyboard */,
 				025B13291BEBC5DB002AB684 /* Info.plist */,
 				025B13181BEBC5DB002AB684 /* Supporting Files */,
@@ -119,6 +140,12 @@
 				025B13B21BF003F3002AB684 /* TweetsViewController.h */,
 				025B13B31BF003F3002AB684 /* TweetsViewController.m */,
 				025B13B41BF003F3002AB684 /* TweetsViewController.xib */,
+				025B13B81BF0401C002AB684 /* TweetDetailsViewController.h */,
+				025B13B91BF0401C002AB684 /* TweetDetailsViewController.m */,
+				025B13BA1BF0401C002AB684 /* TweetDetailsViewController.xib */,
+				025B13BD1BF0402D002AB684 /* NewTweetViewController.h */,
+				025B13BE1BF0402D002AB684 /* NewTweetViewController.m */,
+				025B13BF1BF0402D002AB684 /* NewTweetViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -137,6 +164,9 @@
 		025B13B71BF025BC002AB684 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				025B13C21BF040FD002AB684 /* TweetCell.h */,
+				025B13C31BF040FD002AB684 /* TweetCell.m */,
+				025B13C41BF040FD002AB684 /* TweetCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -218,9 +248,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025B13C91BF047F9002AB684 /* reply.png in Resources */,
 				025B13B61BF003F3002AB684 /* TweetsViewController.xib in Resources */,
 				025B13281BEBC5DB002AB684 /* LaunchScreen.storyboard in Resources */,
+				025B13CA1BF047F9002AB684 /* reweet.png in Resources */,
 				025B13251BEBC5DB002AB684 /* Assets.xcassets in Resources */,
+				025B13C61BF040FD002AB684 /* TweetCell.xib in Resources */,
+				025B13C11BF0402D002AB684 /* NewTweetViewController.xib in Resources */,
+				025B13BC1BF0401C002AB684 /* TweetDetailsViewController.xib in Resources */,
 				025B136A1BEC4153002AB684 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,10 +316,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				025B13691BEC4153002AB684 /* LoginViewController.m in Sources */,
+				025B13C01BF0402D002AB684 /* NewTweetViewController.m in Sources */,
 				025B131D1BEBC5DB002AB684 /* AppDelegate.m in Sources */,
+				025B13C51BF040FD002AB684 /* TweetCell.m in Sources */,
 				025B13B11BED6292002AB684 /* User.m in Sources */,
 				025B13AE1BED6286002AB684 /* Tweet.m in Sources */,
 				025B13311BEBC6AD002AB684 /* TwitterClient.m in Sources */,
+				025B13BB1BF0401C002AB684 /* TweetDetailsViewController.m in Sources */,
 				025B131A1BEBC5DB002AB684 /* main.m in Sources */,
 				025B13B51BF003F3002AB684 /* TweetsViewController.m in Sources */,
 			);

@@ -24,8 +24,9 @@
 		025B13C11BF0402D002AB684 /* NewTweetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 025B13BF1BF0402D002AB684 /* NewTweetViewController.xib */; };
 		025B13C51BF040FD002AB684 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 025B13C31BF040FD002AB684 /* TweetCell.m */; };
 		025B13C61BF040FD002AB684 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 025B13C41BF040FD002AB684 /* TweetCell.xib */; };
-		025B13C91BF047F9002AB684 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 025B13C71BF047F9002AB684 /* reply.png */; };
-		025B13CA1BF047F9002AB684 /* reweet.png in Resources */ = {isa = PBXBuildFile; fileRef = 025B13C81BF047F9002AB684 /* reweet.png */; };
+		025B13CE1BF06DF5002AB684 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 025B13CB1BF06DF5002AB684 /* like.png */; };
+		025B13CF1BF06DF5002AB684 /* reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 025B13CC1BF06DF5002AB684 /* reply.png */; };
+		025B13D01BF06DF5002AB684 /* retweet.png in Resources */ = {isa = PBXBuildFile; fileRef = 025B13CD1BF06DF5002AB684 /* retweet.png */; };
 		0D674BD10BAEC3EA2893A8D2 /* libPods-twitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 334860265EF58386534DA83A /* libPods-twitter.a */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +59,9 @@
 		025B13C21BF040FD002AB684 /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
 		025B13C31BF040FD002AB684 /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
 		025B13C41BF040FD002AB684 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
-		025B13C71BF047F9002AB684 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
-		025B13C81BF047F9002AB684 /* reweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reweet.png; sourceTree = "<group>"; };
+		025B13CB1BF06DF5002AB684 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
+		025B13CC1BF06DF5002AB684 /* reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply.png; sourceTree = "<group>"; };
+		025B13CD1BF06DF5002AB684 /* retweet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet.png; sourceTree = "<group>"; };
 		334860265EF58386534DA83A /* libPods-twitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-twitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E98A586213242454C4F2179 /* Pods-twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.debug.xcconfig"; sourceTree = "<group>"; };
 		57D0261EAB7B70B2BC78AC0A /* Pods-twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,8 +107,9 @@
 				025B131B1BEBC5DB002AB684 /* AppDelegate.h */,
 				025B131C1BEBC5DB002AB684 /* AppDelegate.m */,
 				025B13241BEBC5DB002AB684 /* Assets.xcassets */,
-				025B13C71BF047F9002AB684 /* reply.png */,
-				025B13C81BF047F9002AB684 /* reweet.png */,
+				025B13CB1BF06DF5002AB684 /* like.png */,
+				025B13CC1BF06DF5002AB684 /* reply.png */,
+				025B13CD1BF06DF5002AB684 /* retweet.png */,
 				025B13261BEBC5DB002AB684 /* LaunchScreen.storyboard */,
 				025B13291BEBC5DB002AB684 /* Info.plist */,
 				025B13181BEBC5DB002AB684 /* Supporting Files */,
@@ -248,12 +251,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				025B13C91BF047F9002AB684 /* reply.png in Resources */,
+				025B13CE1BF06DF5002AB684 /* like.png in Resources */,
+				025B13CF1BF06DF5002AB684 /* reply.png in Resources */,
 				025B13B61BF003F3002AB684 /* TweetsViewController.xib in Resources */,
 				025B13281BEBC5DB002AB684 /* LaunchScreen.storyboard in Resources */,
-				025B13CA1BF047F9002AB684 /* reweet.png in Resources */,
 				025B13251BEBC5DB002AB684 /* Assets.xcassets in Resources */,
 				025B13C61BF040FD002AB684 /* TweetCell.xib in Resources */,
+				025B13D01BF06DF5002AB684 /* retweet.png in Resources */,
 				025B13C11BF0402D002AB684 /* NewTweetViewController.xib in Resources */,
 				025B13BC1BF0401C002AB684 /* TweetDetailsViewController.xib in Resources */,
 				025B136A1BEC4153002AB684 /* LoginViewController.xib in Resources */,

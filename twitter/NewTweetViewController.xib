@@ -1,19 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewTweetViewController">
             <connections>
+                <outlet property="nameLabel" destination="WQq-Xf-DmM" id="phh-wC-cky"/>
+                <outlet property="profileImageView" destination="JFI-lM-elh" id="tbD-b0-v7h"/>
+                <outlet property="screenNameLabel" destination="kqQ-Dz-5ak" id="ksk-lx-dcE"/>
+                <outlet property="tweetTextField" destination="UpU-Bl-Mt3" id="JY8-RQ-ADy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JFI-lM-elh">
+                    <rect key="frame" x="14" y="70" width="50" height="50"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="6nI-hX-hkp"/>
+                        <constraint firstAttribute="height" constant="50" id="UmI-Uo-bO8"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timothy lee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqQ-Dz-5ak">
+                    <rect key="frame" x="72" y="98" width="72" height="17"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timothy Lee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQq-Xf-DmM">
+                    <rect key="frame" x="72" y="75" width="85" height="17"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UpU-Bl-Mt3">
+                    <rect key="frame" x="14" y="137" width="292" height="17"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="WQq-Xf-DmM" firstAttribute="leading" secondItem="JFI-lM-elh" secondAttribute="trailing" constant="8" id="18A-h5-upv"/>
+                <constraint firstItem="JFI-lM-elh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="IUF-oB-A3e"/>
+                <constraint firstItem="UpU-Bl-Mt3" firstAttribute="top" secondItem="JFI-lM-elh" secondAttribute="bottom" constant="17" id="Oiy-qL-FtU"/>
+                <constraint firstAttribute="trailing" secondItem="UpU-Bl-Mt3" secondAttribute="trailing" constant="14" id="QSy-s6-XQi"/>
+                <constraint firstItem="UpU-Bl-Mt3" firstAttribute="top" secondItem="JFI-lM-elh" secondAttribute="bottom" constant="17" id="UQL-az-Stk"/>
+                <constraint firstItem="UpU-Bl-Mt3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="YvS-2S-h7T"/>
+                <constraint firstItem="UpU-Bl-Mt3" firstAttribute="top" secondItem="kqQ-Dz-5ak" secondAttribute="bottom" constant="22" id="cC3-yY-dPu"/>
+                <constraint firstItem="WQq-Xf-DmM" firstAttribute="leading" secondItem="JFI-lM-elh" secondAttribute="trailing" constant="8" id="fYI-B9-hAE"/>
+                <constraint firstItem="JFI-lM-elh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="hMD-bb-EaL"/>
+                <constraint firstItem="WQq-Xf-DmM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="hMi-TQ-oPI"/>
+                <constraint firstItem="kqQ-Dz-5ak" firstAttribute="top" secondItem="WQq-Xf-DmM" secondAttribute="bottom" constant="6" id="kE0-sR-tT8"/>
+                <constraint firstItem="kqQ-Dz-5ak" firstAttribute="leading" secondItem="JFI-lM-elh" secondAttribute="trailing" constant="8" id="s1E-lT-xOK"/>
+            </constraints>
+            <point key="canvasLocation" x="352" y="353"/>
         </view>
     </objects>
 </document>

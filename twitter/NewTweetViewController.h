@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface NewTweetViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *screenNameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *tweetTextField;
+
+@property (nonatomic, strong) User *user;
 
 @end

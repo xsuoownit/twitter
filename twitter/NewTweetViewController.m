@@ -7,6 +7,10 @@
 //
 
 #import "NewTweetViewController.h"
+#import "TweetsViewController.h"
+#import "User.h"
+#import "UIImageView+AFNetworking.h"
+#import "TwitterClient.h"
 
 @interface NewTweetViewController ()
 
@@ -16,7 +20,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    UIColor *bgColor = [UIColor colorWithRed:80/255.0 green:170/255.0 blue:241/255.0 alpha:1.0];
+    [self.navigationController.navigationBar setBarTintColor:bgColor];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(onCancel)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
+    
+    UIBarButtonItem *tweetButton = [[UIBarButtonItem alloc] initWithTitle:@"Tweet" style:UIBarButtonItemStylePlain target:self action:@selector(onTweet)];
+    self.navigationItem.rightBarButtonItem = tweetButton;
+    
+    User *currentUser = [User currentUser];
+    [self.profileImageView setImageWithURL:[NSURL URLWithString:currentUser.profileImageUrl]];
+    self.nameLabel.text = currentUser.name;
+    self.screenNameLabel.text = currentUser.screenname;
+    
+    self.tweetTextField.placeholder = @"140 characters...";
+    [self.tweetTextField becomeFirstResponder];
+}
+
+- (void)onCancel {
+    [self gotoHomePage];
+}
+
+- (void)onTweet {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"status"] = self.tweetTextField.text;
+    [[TwitterClient sharedInstance] statusUpdate:params completion:^(NSError *error) {
+        if (error == nil) {
+            [self gotoHomePage];
+        } else {
+            NSLog(@"Failed to post status: %@", error);
+        }
+    }];
+}
+
+- (void)gotoHomePage {
+    UIViewController *vc = [[TweetsViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nvc animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -12,7 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "TwitterClient.h"
 
-@interface NewTweetViewController ()
+@interface NewTweetViewController () <UITextViewDelegate>
 
 @end
 
@@ -36,7 +36,17 @@
     self.nameLabel.text = currentUser.name;
     self.screenNameLabel.text = currentUser.screenname;
     
+    self.tweetTextView.delegate = self;
     [self.tweetTextView becomeFirstResponder];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if(range.length + range.location > textView.text.length) {
+        return NO;
+    }
+    
+    NSUInteger newLength = [textView.text length] + [text length] - range.length;
+    return newLength <= 140;
 }
 
 - (void)onCancel {

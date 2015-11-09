@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *screenNameLabel;
-@property (weak, nonatomic) IBOutlet UITextField *tweetTextField;
+@property (weak, nonatomic) IBOutlet UITextView *tweetTextView;
 
 @property (nonatomic, strong) User *user;
 

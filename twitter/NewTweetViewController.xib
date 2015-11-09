@@ -10,7 +10,7 @@
                 <outlet property="nameLabel" destination="WQq-Xf-DmM" id="phh-wC-cky"/>
                 <outlet property="profileImageView" destination="JFI-lM-elh" id="tbD-b0-v7h"/>
                 <outlet property="screenNameLabel" destination="kqQ-Dz-5ak" id="ksk-lx-dcE"/>
-                <outlet property="tweetTextField" destination="UpU-Bl-Mt3" id="JY8-RQ-ADy"/>
+                <outlet property="tweetTextView" destination="cwj-5s-8jj" id="X76-zz-MhU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,23 +41,19 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UpU-Bl-Mt3">
-                    <rect key="frame" x="14" y="137" width="292" height="17"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cwj-5s-8jj">
+                    <rect key="frame" x="14" y="135" width="291" height="90"/>
                     <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="WQq-Xf-DmM" firstAttribute="leading" secondItem="JFI-lM-elh" secondAttribute="trailing" constant="8" id="18A-h5-upv"/>
                 <constraint firstItem="JFI-lM-elh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="IUF-oB-A3e"/>
-                <constraint firstItem="UpU-Bl-Mt3" firstAttribute="top" secondItem="JFI-lM-elh" secondAttribute="bottom" constant="17" id="Oiy-qL-FtU"/>
-                <constraint firstAttribute="trailing" secondItem="UpU-Bl-Mt3" secondAttribute="trailing" constant="14" id="QSy-s6-XQi"/>
-                <constraint firstItem="UpU-Bl-Mt3" firstAttribute="top" secondItem="JFI-lM-elh" secondAttribute="bottom" constant="17" id="UQL-az-Stk"/>
-                <constraint firstItem="UpU-Bl-Mt3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="YvS-2S-h7T"/>
-                <constraint firstItem="UpU-Bl-Mt3" firstAttribute="top" secondItem="kqQ-Dz-5ak" secondAttribute="bottom" constant="22" id="cC3-yY-dPu"/>
                 <constraint firstItem="WQq-Xf-DmM" firstAttribute="leading" secondItem="JFI-lM-elh" secondAttribute="trailing" constant="8" id="fYI-B9-hAE"/>
                 <constraint firstItem="JFI-lM-elh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="hMD-bb-EaL"/>
                 <constraint firstItem="WQq-Xf-DmM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="hMi-TQ-oPI"/>

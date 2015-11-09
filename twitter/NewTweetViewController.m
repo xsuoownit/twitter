@@ -36,8 +36,7 @@
     self.nameLabel.text = currentUser.name;
     self.screenNameLabel.text = currentUser.screenname;
     
-    self.tweetTextField.placeholder = @"140 characters...";
-    [self.tweetTextField becomeFirstResponder];
+    [self.tweetTextView becomeFirstResponder];
 }
 
 - (void)onCancel {
@@ -46,7 +45,7 @@
 
 - (void)onTweet {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"status"] = self.tweetTextField.text;
+    params[@"status"] = self.tweetTextView.text;
     [[TwitterClient sharedInstance] statusUpdate:params completion:^(NSError *error) {
         if (error == nil) {
             [self gotoHomePage];

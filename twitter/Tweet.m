@@ -32,6 +32,12 @@
         } else {
             self.timeDiff = [NSString stringWithFormat:@"%ldd", (long)secondsBetween / 86400];
         }
+        
+        self.favoried = dictionary[@"favorited"];
+        self.retweetCount =  [dictionary[@"retweet_count"] intValue];
+        self.favoritesCount = [dictionary[@"favorite_count"] intValue];
+        self.idStr = dictionary[@"id_str"];
+        self.retweeted = dictionary[@"retweeted"];
     }
     return self;
 }

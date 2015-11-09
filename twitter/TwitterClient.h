@@ -18,5 +18,7 @@
 
 - (void)homeTimelineWithParams:(NSDictionary *)params completion:(void (^)(NSArray *tweets, NSError *error))completion;
 - (void)statusUpdate:(NSDictionary *)status completion:(void (^)(NSError *error))completion;
+- (void)statusRetweet:(NSString *)statusId completion:(void (^)(NSError *error))completion;
+- (void)favorites:(NSString *)statusId completion:(void (^)(NSError *error))completion;
 
 @end

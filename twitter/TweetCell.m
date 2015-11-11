@@ -12,7 +12,7 @@
 @implementation TweetCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    self.profileImageView.layer.cornerRadius = 3;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -27,8 +27,22 @@
     [self.profileImageView setImageWithURL:[NSURL URLWithString:tweet.user.profileImageUrl]];
     self.nameLabel.text = tweet.user.name;
     self.screenNameLabel.text = [NSString stringWithFormat:@"@%@", tweet.user.screenname];
-    self.descriptionLabel.text = tweet.text;
+    self.descriptionTextView.text = tweet.text;
     self.timeLabel.text = tweet.timeDiff;
+    [self.descriptionTextView sizeToFit];
+    [self.descriptionTextView layoutIfNeeded];
+    
+    if (tweet.favoried) {
+        [self.likeButton setImage:[UIImage imageNamed:@"like-action-on.png"] forState:UIControlStateNormal];
+    } else {
+        [self.likeButton setImage:[UIImage imageNamed:@"like-action.png"] forState:UIControlStateNormal];
+    }
+    
+    if (tweet.retweeted) {
+        [self.retweetButton setImage:[UIImage imageNamed:@"retweet-action-on.png"] forState:UIControlStateNormal];
+    } else {
+        [self.retweetButton setImage:[UIImage imageNamed:@"retweet-action.png"] forState:UIControlStateNormal];
+    }
 }
 
 @end

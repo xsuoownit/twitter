@@ -30,6 +30,14 @@
 		025B13D91BF3181B002AB684 /* retweet-action.png in Resources */ = {isa = PBXBuildFile; fileRef = 025B13D41BF3181B002AB684 /* retweet-action.png */; };
 		025B13DA1BF3181B002AB684 /* Twitter_logo_blue_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 025B13D51BF3181B002AB684 /* Twitter_logo_blue_48.png */; };
 		025B13DC1BF319C6002AB684 /* retweet-action-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 025B13DB1BF319C6002AB684 /* retweet-action-on.png */; };
+		02EBFF8B1BF9B41B00B81A53 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EBFF891BF9B41B00B81A53 /* MenuViewController.m */; };
+		02EBFF8C1BF9B41B00B81A53 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EBFF8A1BF9B41B00B81A53 /* MenuViewController.xib */; };
+		02EBFF901BF9B54000B81A53 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EBFF8E1BF9B54000B81A53 /* MenuCell.m */; };
+		02EBFF911BF9B54000B81A53 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EBFF8F1BF9B54000B81A53 /* MenuCell.xib */; };
+		02EBFF961BF9B7B700B81A53 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EBFF931BF9B7B700B81A53 /* home.png */; };
+		02EBFF971BF9B7B700B81A53 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EBFF941BF9B7B700B81A53 /* profile.png */; };
+		02EBFF9A1BF9B81C00B81A53 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EBFF991BF9B81C00B81A53 /* Menu.m */; };
+		02EBFF9E1BF9C5E700B81A53 /* at.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EBFF9D1BF9C5E700B81A53 /* at.png */; };
 		0D674BD10BAEC3EA2893A8D2 /* libPods-twitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 334860265EF58386534DA83A /* libPods-twitter.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +76,17 @@
 		025B13D41BF3181B002AB684 /* retweet-action.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retweet-action.png"; sourceTree = "<group>"; };
 		025B13D51BF3181B002AB684 /* Twitter_logo_blue_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter_logo_blue_48.png; sourceTree = "<group>"; };
 		025B13DB1BF319C6002AB684 /* retweet-action-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retweet-action-on.png"; sourceTree = "<group>"; };
+		02EBFF881BF9B41B00B81A53 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		02EBFF891BF9B41B00B81A53 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		02EBFF8A1BF9B41B00B81A53 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		02EBFF8D1BF9B54000B81A53 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		02EBFF8E1BF9B54000B81A53 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		02EBFF8F1BF9B54000B81A53 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		02EBFF931BF9B7B700B81A53 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		02EBFF941BF9B7B700B81A53 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		02EBFF981BF9B81C00B81A53 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		02EBFF991BF9B81C00B81A53 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
+		02EBFF9D1BF9C5E700B81A53 /* at.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = at.png; sourceTree = "<group>"; };
 		334860265EF58386534DA83A /* libPods-twitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-twitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E98A586213242454C4F2179 /* Pods-twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.debug.xcconfig"; sourceTree = "<group>"; };
 		57D0261EAB7B70B2BC78AC0A /* Pods-twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +132,9 @@
 				025B131B1BEBC5DB002AB684 /* AppDelegate.h */,
 				025B131C1BEBC5DB002AB684 /* AppDelegate.m */,
 				025B13241BEBC5DB002AB684 /* Assets.xcassets */,
+				02EBFF9D1BF9C5E700B81A53 /* at.png */,
+				02EBFF931BF9B7B700B81A53 /* home.png */,
+				02EBFF941BF9B7B700B81A53 /* profile.png */,
 				025B13D11BF3181B002AB684 /* like-action-on.png */,
 				025B13DB1BF319C6002AB684 /* retweet-action-on.png */,
 				025B13D21BF3181B002AB684 /* like-action.png */,
@@ -158,6 +180,9 @@
 				025B13BD1BF0402D002AB684 /* NewTweetViewController.h */,
 				025B13BE1BF0402D002AB684 /* NewTweetViewController.m */,
 				025B13BF1BF0402D002AB684 /* NewTweetViewController.xib */,
+				02EBFF881BF9B41B00B81A53 /* MenuViewController.h */,
+				02EBFF891BF9B41B00B81A53 /* MenuViewController.m */,
+				02EBFF8A1BF9B41B00B81A53 /* MenuViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -169,6 +194,8 @@
 				025B13AD1BED6286002AB684 /* Tweet.m */,
 				025B13AF1BED6292002AB684 /* User.h */,
 				025B13B01BED6292002AB684 /* User.m */,
+				02EBFF981BF9B81C00B81A53 /* Menu.h */,
+				02EBFF991BF9B81C00B81A53 /* Menu.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -179,6 +206,9 @@
 				025B13C21BF040FD002AB684 /* TweetCell.h */,
 				025B13C31BF040FD002AB684 /* TweetCell.m */,
 				025B13C41BF040FD002AB684 /* TweetCell.xib */,
+				02EBFF8D1BF9B54000B81A53 /* MenuCell.h */,
+				02EBFF8E1BF9B54000B81A53 /* MenuCell.m */,
+				02EBFF8F1BF9B54000B81A53 /* MenuCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -265,12 +295,17 @@
 				025B13D71BF3181B002AB684 /* like-action.png in Resources */,
 				025B13DC1BF319C6002AB684 /* retweet-action-on.png in Resources */,
 				025B13281BEBC5DB002AB684 /* LaunchScreen.storyboard in Resources */,
+				02EBFF8C1BF9B41B00B81A53 /* MenuViewController.xib in Resources */,
+				02EBFF961BF9B7B700B81A53 /* home.png in Resources */,
 				025B13D91BF3181B002AB684 /* retweet-action.png in Resources */,
 				025B13251BEBC5DB002AB684 /* Assets.xcassets in Resources */,
 				025B13C61BF040FD002AB684 /* TweetCell.xib in Resources */,
 				025B13C11BF0402D002AB684 /* NewTweetViewController.xib in Resources */,
 				025B13DA1BF3181B002AB684 /* Twitter_logo_blue_48.png in Resources */,
+				02EBFF9E1BF9C5E700B81A53 /* at.png in Resources */,
 				025B13BC1BF0401C002AB684 /* TweetDetailsViewController.xib in Resources */,
+				02EBFF971BF9B7B700B81A53 /* profile.png in Resources */,
+				02EBFF911BF9B54000B81A53 /* MenuCell.xib in Resources */,
 				025B136A1BEC4153002AB684 /* LoginViewController.xib in Resources */,
 				025B13D61BF3181B002AB684 /* like-action-on.png in Resources */,
 			);
@@ -331,8 +366,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02EBFF9A1BF9B81C00B81A53 /* Menu.m in Sources */,
 				025B13691BEC4153002AB684 /* LoginViewController.m in Sources */,
 				025B13C01BF0402D002AB684 /* NewTweetViewController.m in Sources */,
+				02EBFF901BF9B54000B81A53 /* MenuCell.m in Sources */,
 				025B131D1BEBC5DB002AB684 /* AppDelegate.m in Sources */,
 				025B13C51BF040FD002AB684 /* TweetCell.m in Sources */,
 				025B13B11BED6292002AB684 /* User.m in Sources */,
@@ -340,6 +377,7 @@
 				025B13311BEBC6AD002AB684 /* TwitterClient.m in Sources */,
 				025B13BB1BF0401C002AB684 /* TweetDetailsViewController.m in Sources */,
 				025B131A1BEBC5DB002AB684 /* main.m in Sources */,
+				02EBFF8B1BF9B41B00B81A53 /* MenuViewController.m in Sources */,
 				025B13B51BF003F3002AB684 /* TweetsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

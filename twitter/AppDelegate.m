@@ -28,8 +28,8 @@
     UINavigationController *nvc;
     User *user = [User currentUser];
     if (user != nil) {
-        UIViewController *vc = [[TweetsViewController alloc] init];
-        nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+        TweetsViewController *tvc = [[TweetsViewController alloc] init];
+        nvc = [[UINavigationController alloc] initWithRootViewController:tvc];
     } else {
         UIViewController *vc = [[LoginViewController alloc] init];
         nvc = [[UINavigationController alloc] initWithRootViewController:vc];

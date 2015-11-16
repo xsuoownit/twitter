@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TweetsViewController">
             <connections>
+                <outlet property="contentView" destination="2Oj-Mm-SPY" id="Yzn-SV-O0O"/>
+                <outlet property="leftMarginConstraint" destination="i7Y-qe-CA2" id="w4U-LN-FsB"/>
+                <outlet property="menuView" destination="Zmf-ic-Puw" id="fwo-KK-Be7"/>
                 <outlet property="tableView" destination="Rf3-8A-zco" id="336-Aj-3x8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -16,21 +19,46 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rf3-8A-zco">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zmf-ic-Puw" userLabel="Menu View">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Oj-Mm-SPY" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rf3-8A-zco">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="zpq-GJ-mJo" appends="YES" id="rEb-se-dce"/>
+                    </connections>
+                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Rf3-8A-zco" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1nk-X3-eM9"/>
-                <constraint firstItem="Rf3-8A-zco" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Lof-hF-yjv"/>
-                <constraint firstAttribute="bottom" secondItem="Rf3-8A-zco" secondAttribute="bottom" id="dpR-UD-yYH"/>
-                <constraint firstAttribute="trailing" secondItem="Rf3-8A-zco" secondAttribute="trailing" id="oGs-b1-0BZ"/>
+                <constraint firstAttribute="trailing" secondItem="Zmf-ic-Puw" secondAttribute="trailing" id="AYC-7d-0n7"/>
+                <constraint firstItem="2Oj-Mm-SPY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N99-T0-g2j"/>
+                <constraint firstItem="Zmf-ic-Puw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="amC-wc-Zqz"/>
+                <constraint firstItem="2Oj-Mm-SPY" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="cT6-IR-iZQ"/>
+                <constraint firstAttribute="bottom" secondItem="2Oj-Mm-SPY" secondAttribute="bottom" id="dYt-rJ-wZd"/>
+                <constraint firstItem="Zmf-ic-Puw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="g8N-TV-vAN"/>
+                <constraint firstItem="2Oj-Mm-SPY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="i7Y-qe-CA2"/>
+                <constraint firstAttribute="bottom" secondItem="Zmf-ic-Puw" secondAttribute="bottom" id="qSP-bq-jUw"/>
             </constraints>
             <point key="canvasLocation" x="360" y="277"/>
         </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="zpq-GJ-mJo">
+            <connections>
+                <action selector="onPanGesture:" destination="-1" id="4ah-xk-RJh"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
 </document>

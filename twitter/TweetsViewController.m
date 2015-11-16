@@ -13,12 +13,20 @@
 #import "NewTweetViewController.h"
 #import "TweetCell.h"
 #import "TweetDetailsViewController.h"
+#import "MenuViewController.h"
 
 @interface TweetsViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIView *menuView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftMarginConstraint;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *tweets;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+
+@property (nonatomic) CGFloat originalLeftMargin;
 
 @end
 
@@ -26,6 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setUpMenuView];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -48,6 +58,14 @@
     [self.refreshControl addTarget:self action:@selector(onRefresh) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     [self onRefresh];
+}
+
+- (void)setUpMenuView {
+    MenuViewController *mvc = [[MenuViewController alloc] init];
+    [mvc willMoveToParentViewController:self];
+    [self addChildViewController:mvc];
+    [self.menuView addSubview:mvc.view];
+    [mvc didMoveToParentViewController:self];
 }
 
 - (void)onRefresh {
@@ -88,6 +106,26 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onPanGesture:(UIPanGestureRecognizer *)sender {
+    CGPoint translation = [sender translationInView:self.view];
+    CGPoint velocity = [sender velocityInView:self.view];
+    
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        self.originalLeftMargin = self.leftMarginConstraint.constant;
+    } else if (sender.state == UIGestureRecognizerStateChanged) {
+        self.leftMarginConstraint.constant = self.originalLeftMargin + translation.x;
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
+        [UIView animateWithDuration:0.3 animations:^{
+            if (velocity.x > 0) {
+                self.leftMarginConstraint.constant = self.view.frame.size.width - 200;
+            } else {
+                self.leftMarginConstraint.constant = 0;
+            }
+            [self.view layoutIfNeeded];
+        }];
+    }
 }
 
 /*

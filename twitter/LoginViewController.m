@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "TwitterClient.h"
-#import "TweetsViewController.h"
+#import "ContainerViewController.h"
 
 @interface LoginViewController ()
 
@@ -29,7 +29,7 @@
 - (IBAction)onLogin:(id)sender {
     [[TwitterClient sharedInstance] loginWithCompletion:^(User *user, NSError *error) {
         if (user != nil) {
-            UIViewController *vc = [[TweetsViewController alloc] init];
+            UIViewController *vc = [[ContainerViewController alloc] init];
             UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
             [self presentViewController:nvc animated:YES completion:nil];
         } else {

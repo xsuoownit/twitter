@@ -11,7 +11,7 @@
 #import "TwitterClient.h"
 #import "User.h"
 #import "Tweet.h"
-#import "TweetsViewController.h"
+#import "ContainerViewController.h"
 
 @interface AppDelegate ()
 
@@ -28,8 +28,8 @@
     UINavigationController *nvc;
     User *user = [User currentUser];
     if (user != nil) {
-        TweetsViewController *tvc = [[TweetsViewController alloc] init];
-        nvc = [[UINavigationController alloc] initWithRootViewController:tvc];
+        ContainerViewController *cvc = [[ContainerViewController alloc] init];
+        nvc = [[UINavigationController alloc] initWithRootViewController:cvc];
     } else {
         UIViewController *vc = [[LoginViewController alloc] init];
         nvc = [[UINavigationController alloc] initWithRootViewController:vc];

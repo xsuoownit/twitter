@@ -7,7 +7,7 @@
 //
 
 #import "NewTweetViewController.h"
-#import "TweetsViewController.h"
+#import "ContainerViewController.h"
 #import "User.h"
 #import "UIImageView+AFNetworking.h"
 #import "TwitterClient.h"
@@ -65,7 +65,7 @@
 }
 
 - (void)gotoHomePage {
-    UIViewController *vc = [[TweetsViewController alloc] init];
+    UIViewController *vc = [[ContainerViewController alloc] init];
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:nvc animated:YES completion:nil];
 }

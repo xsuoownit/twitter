@@ -38,6 +38,8 @@
 		02EBFF971BF9B7B700B81A53 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EBFF941BF9B7B700B81A53 /* profile.png */; };
 		02EBFF9A1BF9B81C00B81A53 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EBFF991BF9B81C00B81A53 /* Menu.m */; };
 		02EBFF9E1BF9C5E700B81A53 /* at.png in Resources */ = {isa = PBXBuildFile; fileRef = 02EBFF9D1BF9C5E700B81A53 /* at.png */; };
+		02EBFFA21BF9C88E00B81A53 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EBFFA01BF9C88E00B81A53 /* ContainerViewController.m */; };
+		02EBFFA31BF9C88E00B81A53 /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EBFFA11BF9C88E00B81A53 /* ContainerViewController.xib */; };
 		0D674BD10BAEC3EA2893A8D2 /* libPods-twitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 334860265EF58386534DA83A /* libPods-twitter.a */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,9 @@
 		02EBFF981BF9B81C00B81A53 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 		02EBFF991BF9B81C00B81A53 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
 		02EBFF9D1BF9C5E700B81A53 /* at.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = at.png; sourceTree = "<group>"; };
+		02EBFF9F1BF9C88E00B81A53 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		02EBFFA01BF9C88E00B81A53 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		02EBFFA11BF9C88E00B81A53 /* ContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
 		334860265EF58386534DA83A /* libPods-twitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-twitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E98A586213242454C4F2179 /* Pods-twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.debug.xcconfig"; sourceTree = "<group>"; };
 		57D0261EAB7B70B2BC78AC0A /* Pods-twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.release.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +188,9 @@
 				02EBFF881BF9B41B00B81A53 /* MenuViewController.h */,
 				02EBFF891BF9B41B00B81A53 /* MenuViewController.m */,
 				02EBFF8A1BF9B41B00B81A53 /* MenuViewController.xib */,
+				02EBFF9F1BF9C88E00B81A53 /* ContainerViewController.h */,
+				02EBFFA01BF9C88E00B81A53 /* ContainerViewController.m */,
+				02EBFFA11BF9C88E00B81A53 /* ContainerViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -298,6 +306,7 @@
 				02EBFF8C1BF9B41B00B81A53 /* MenuViewController.xib in Resources */,
 				02EBFF961BF9B7B700B81A53 /* home.png in Resources */,
 				025B13D91BF3181B002AB684 /* retweet-action.png in Resources */,
+				02EBFFA31BF9C88E00B81A53 /* ContainerViewController.xib in Resources */,
 				025B13251BEBC5DB002AB684 /* Assets.xcassets in Resources */,
 				025B13C61BF040FD002AB684 /* TweetCell.xib in Resources */,
 				025B13C11BF0402D002AB684 /* NewTweetViewController.xib in Resources */,
@@ -368,6 +377,7 @@
 			files = (
 				02EBFF9A1BF9B81C00B81A53 /* Menu.m in Sources */,
 				025B13691BEC4153002AB684 /* LoginViewController.m in Sources */,
+				02EBFFA21BF9C88E00B81A53 /* ContainerViewController.m in Sources */,
 				025B13C01BF0402D002AB684 /* NewTweetViewController.m in Sources */,
 				02EBFF901BF9B54000B81A53 /* MenuCell.m in Sources */,
 				025B131D1BEBC5DB002AB684 /* AppDelegate.m in Sources */,

@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class MenuViewController;
+
+@protocol MenuViewControllerDelegate <NSObject>
+
+- (void)menuViewController:(MenuViewController *)controller gotoViewController:(UIViewController *)viewController;
+
+@end
+
 @interface MenuViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, weak) id<MenuViewControllerDelegate> delegate;
 
 @end

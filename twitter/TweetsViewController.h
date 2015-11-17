@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MenuViewController.h"
+#import "TwitterClient.h"
 
 @interface TweetsViewController : UIViewController
 
-@property (nonatomic, weak) MenuViewController *menuViewController;
++ (id)withRequestPage:(RequestPage)requestPage;
 
 @end

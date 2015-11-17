@@ -9,6 +9,9 @@
 #import "MenuViewController.h"
 #import "Menu.h"
 #import "MenuCell.h"
+#import "ContainerViewController.h"
+#import "ProfileViewController.h"
+#import "TweetsViewController.h"
 
 @interface MenuViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -48,6 +51,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    switch (indexPath.row) {
+        case 0:
+            [self.delegate menuViewController:self gotoViewController:[[ProfileViewController alloc] init]];
+            break;
+        case 1:
+            [self.delegate menuViewController:self gotoViewController:[TweetsViewController withRequestPage:Home]];
+            break;
+        case 2:
+            [self.delegate menuViewController:self gotoViewController:[TweetsViewController withRequestPage:Mentions]];
+        default:
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

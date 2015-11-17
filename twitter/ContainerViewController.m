@@ -12,7 +12,7 @@
 #import "NewTweetViewController.h"
 #import "User.h"
 
-@interface ContainerViewController ()
+@interface ContainerViewController () <MenuViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *menuView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpMenuView];
-    [self setUpContentView];
+    [self setUpContentView:[TweetsViewController withRequestPage:Home]];
     
     self.title = @"Home";
     UIColor *bgColor = [UIColor colorWithRed:80/255.0 green:170/255.0 blue:241/255.0 alpha:1.0];
@@ -39,18 +39,25 @@
     
     UIBarButtonItem *newButton = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStylePlain target:self action:@selector(onNew)];
     self.navigationItem.rightBarButtonItem = newButton;
+    
+    self.navigationController.navigationBar.translucent = NO;
 }
 
-- (void)setUpContentView {
-    TweetsViewController *tvc = [[TweetsViewController alloc] init];
-    [tvc willMoveToParentViewController:self];
-    [self addChildViewController:tvc];
-    [self.contentView addSubview:tvc.view];
-    [tvc didMoveToParentViewController:self];
+- (void)menuViewController:(MenuViewController *)controller gotoViewController:(UIViewController *)viewController {
+    self.leftMarginConstraint.constant = 0;
+    [self setUpContentView:viewController];
+}
+
+- (void)setUpContentView:(UIViewController *)viewController {
+    [viewController willMoveToParentViewController:self];
+    [self addChildViewController:viewController];
+    [self.contentView addSubview:viewController.view];
+    [viewController didMoveToParentViewController:self];
 }
 
 - (void)setUpMenuView {
     MenuViewController *mvc = [[MenuViewController alloc] init];
+    mvc.delegate = self;
     [mvc willMoveToParentViewController:self];
     [self addChildViewController:mvc];
     [self.menuView addSubview:mvc.view];

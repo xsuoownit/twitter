@@ -18,9 +18,17 @@
 @property (nonatomic, strong) NSArray *tweets;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
+@property (nonatomic) enum RequestPage requestPage;
+
 @end
 
 @implementation TweetsViewController
+
++ (id)withRequestPage:(RequestPage)requestPage {
+    TweetsViewController *vc = [[TweetsViewController alloc] init];
+    vc.requestPage = requestPage;
+    return vc;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,11 +46,19 @@
 }
 
 - (void)onRefresh {
-    [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
-        self.tweets = tweets;
-        [self.tableView reloadData];
-        [self.refreshControl endRefreshing];
-    }];
+    if (self.requestPage == Mentions) {
+        [[TwitterClient sharedInstance] mentionsTimeLineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+            self.tweets = tweets;
+            [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
+        }];
+    } else {
+        [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+            self.tweets = tweets;
+            [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
+        }];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

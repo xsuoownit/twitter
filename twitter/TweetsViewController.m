@@ -11,14 +11,16 @@
 #import "Tweet.h"
 #import "TweetCell.h"
 #import "TweetDetailsViewController.h"
+#import "ProfileViewController.h"
 
-@interface TweetsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface TweetsViewController () <UITableViewDataSource, UITableViewDelegate, TweetCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *tweets;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @property (nonatomic) enum RequestPage requestPage;
+@property (nonatomic) User *clickedUser;
 
 @end
 
@@ -45,6 +47,12 @@
     [self onRefresh];
 }
 
+- (void)tweetCell:(TweetCell *)tweetCell onTappedTweet:(Tweet *)tweet {
+    ProfileViewController *vc = [[ProfileViewController alloc] init];
+    vc.user = tweet.user;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)onRefresh {
     if (self.requestPage == Mentions) {
         [[TwitterClient sharedInstance] mentionsTimeLineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
@@ -68,6 +76,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TweetCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
     [cell setTweet:self.tweets[indexPath.row]];
+    cell.delegate = self;
     return cell;
 }
 

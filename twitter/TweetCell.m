@@ -8,6 +8,7 @@
 
 #import "TweetCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "ProfileViewController.h"
 
 @implementation TweetCell
 
@@ -43,6 +44,15 @@
     } else {
         [self.retweetButton setImage:[UIImage imageNamed:@"retweet-action.png"] forState:UIControlStateNormal];
     }
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onImageViewTapped)];
+    singleTap.numberOfTapsRequired = 1;
+    [self.profileImageView setUserInteractionEnabled:YES];
+    [self.profileImageView addGestureRecognizer:singleTap];
+}
+
+- (void)onImageViewTapped {
+    [self.delegate tweetCell:self onTappedTweet:self.tweet];
 }
 
 @end

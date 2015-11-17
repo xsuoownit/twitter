@@ -55,7 +55,7 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
         [self.requestSerializer saveAccessToken:accessToken];
         
         [self GET:@"1.1/account/verify_credentials.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            
+
             User *user = [[User alloc] initWitDictionary:responseObject];
             [User setCurrentUser:user];
             self.loginCompletion(user, nil);
@@ -111,6 +111,15 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
     [self GET:@"1.1/statuses/mentions_timeline.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSArray *tweets = [[Tweet alloc] tweetsWithArray:responseObject];
         completion(tweets, nil);
+    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
+        completion(nil, error);
+    }];
+}
+
+- (void)showUser:(NSDictionary *)params completion:(void (^)(User *, NSError *))completion {
+    [self GET:@"1.1/users/show.json" parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        User *user = [[User alloc] initWitDictionary:responseObject];
+        completion(user, nil);
     } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
         completion(nil, error);
     }];

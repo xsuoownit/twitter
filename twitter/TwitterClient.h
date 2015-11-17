@@ -26,5 +26,6 @@ typedef NS_ENUM(NSInteger, RequestPage) {
 - (void)statusRetweet:(NSString *)statusId completion:(void (^)(NSError *error))completion;
 - (void)favorites:(NSString *)statusId completion:(void (^)(NSError *error))completion;
 - (void)mentionsTimeLineWithParams:(NSDictionary *)params completion:(void (^)(NSArray *tweets, NSError *error))completion;
+- (void)showUser:(NSDictionary *)params completion:(void (^)(User *user, NSError *error))completion;
 
 @end

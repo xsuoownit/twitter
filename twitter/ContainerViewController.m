@@ -11,6 +11,7 @@
 #import "TweetsViewController.h"
 #import "NewTweetViewController.h"
 #import "User.h"
+#import "TweetCell.h"
 
 @interface ContainerViewController () <MenuViewControllerDelegate>
 

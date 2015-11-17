@@ -52,17 +52,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    switch (indexPath.row) {
-        case 0:
-            [self.delegate menuViewController:self gotoViewController:[[ProfileViewController alloc] init]];
-            break;
-        case 1:
-            [self.delegate menuViewController:self gotoViewController:[TweetsViewController withRequestPage:Home]];
-            break;
-        case 2:
-            [self.delegate menuViewController:self gotoViewController:[TweetsViewController withRequestPage:Mentions]];
-        default:
-            break;
+    if (indexPath.row == 0) {
+        ProfileViewController *vc = [[ProfileViewController alloc] init];
+        vc.user = [User currentUser];
+        [self.delegate menuViewController:self gotoViewController:vc];
+    } else if (indexPath.row == 1) {
+        [self.delegate menuViewController:self gotoViewController:[TweetsViewController withRequestPage:Home]];
+    } else if (indexPath.row == 2) {
+        [self.delegate menuViewController:self gotoViewController:[TweetsViewController withRequestPage:Mentions]];
     }
 }
 

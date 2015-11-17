@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ProfileViewController ()
 
@@ -16,7 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.profileImageView setImageWithURL:[NSURL URLWithString:self.user.profileImageUrl]];
+    self.nameLabel.text = self.user.name;
+    self.screenNameLabel.text = self.user.screenname;
+    self.numTweetsLabel.text = [NSString stringWithFormat:@"%ld", self.user.statusesCount];
+    self.numFollowersLabel.text = [NSString stringWithFormat:@"%ld", self.user.followersCount];
+    self.numFollowingLabel.text = [NSString stringWithFormat:@"%ld", self.user.friendsCount];
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)didReceiveMemoryWarning {
